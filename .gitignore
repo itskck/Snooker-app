@@ -28,6 +28,7 @@ migrate_working_dir/
 /macos
 /web
 /windows
+pubspec.lock
 
 lib/generated_plugin_registrant.dart
 
