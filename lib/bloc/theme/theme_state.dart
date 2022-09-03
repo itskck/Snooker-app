@@ -11,7 +11,7 @@ class ThemeLight extends ThemeState {
   @override
   final ThemeData theme = ThemeData(
     useMaterial3: true,
-    colorSchemeSeed: Colors.green,
+    colorSchemeSeed: Colors.greenAccent,
     brightness: Brightness.light,
   );
 
@@ -23,7 +23,7 @@ class ThemeDark extends ThemeState {
   @override
   final ThemeData theme = ThemeData(
     useMaterial3: true,
-    colorSchemeSeed: Colors.green,
+    colorSchemeSeed: Colors.greenAccent,
     brightness: Brightness.dark,
   );
 
