@@ -1,19 +1,21 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:snookerpad2/ui/screens/leaderboard.dart';
-import 'package:snookerpad2/ui/screens/rules.dart';
-import 'package:snookerpad2/ui/screens/scoreboard.dart';
-import 'package:snookerpad2/ui/screens/settings.dart';
+import 'package:snookerpad2/ui/screens/home/leaderboard.dart';
+import 'package:snookerpad2/ui/screens/home/rules.dart';
+import 'package:snookerpad2/ui/screens/home/scoreboard.dart';
+import 'package:snookerpad2/ui/screens/home/settings.dart';
 
 class HomeSkeleton extends StatefulWidget {
   const HomeSkeleton({super.key});
+
+  static const route = '/';
 
   @override
   State<HomeSkeleton> createState() => _HomeSkeletonState();
 }
 
 class _HomeSkeletonState extends State<HomeSkeleton> {
-  late int _index;
+  late int index;
   final List<Widget> screens = const [
     Scoreboard(),
     Rules(),
@@ -24,17 +26,17 @@ class _HomeSkeletonState extends State<HomeSkeleton> {
   @override
   void initState() {
     super.initState();
-    _index = 0;
+    index = 0;
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: screens[_index],
+        child: screens[index],
       ),
       bottomNavigationBar: NavigationBar(
-        selectedIndex: _index,
+        selectedIndex: index,
         destinations: [
           NavigationDestination(
             icon: const Icon(Icons.scoreboard),
@@ -54,7 +56,7 @@ class _HomeSkeletonState extends State<HomeSkeleton> {
           ),
         ],
         onDestinationSelected: (value) => setState(() {
-          _index = value;
+          index = value;
         }),
       ),
     );

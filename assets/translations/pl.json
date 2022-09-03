@@ -1,6 +1,8 @@
 {
-    "scoreboard": "Tablica wyników",
+    "scoreboard": "Graj",
     "rules": "Zasady",
     "leaderboard": "Ranking",
-    "settings": "Ustawienia"
+    "settings": "Ustawienia",
+    "new_frame": "Nowy frejm",
+    "load_frame": "Wczytaj frejm"
 }
