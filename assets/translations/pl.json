@@ -1,6 +1,13 @@
 {
-    "scoreboard": "Tablica wyników",
+    "scoreboard": "Graj",
     "rules": "Zasady",
     "leaderboard": "Ranking",
-    "settings": "Ustawienia"
+    "settings": "Ustawienia",
+    "new_frame": "Nowy frejm",
+    "load_frame": "Wczytaj frejm",
+    "player": "Zawodnik",
+    "frames_won": "W",
+    "frames_lost": "P",
+    "win_ratio": "%",
+    "max_break": "Break"
 }

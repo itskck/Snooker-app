@@ -1,6 +1,13 @@
 {
-    "scoreboard": "Scoreboard",
+    "scoreboard": "Play",
     "rules": "Rules",
     "leaderboard": "Leaderboards",
-    "settings": "Settings"
+    "settings": "Settings",
+    "new_frame": "New frame",
+    "load_frame": "Load frame",
+    "player": "Player",
+    "frames_won": "W",
+    "frames_lost": "L",
+    "win_ratio": "%",
+    "max_break": "Break"
 }

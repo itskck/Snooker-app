@@ -1,14 +1,14 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:hive_flutter/adapters.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:snookerpad2/core/global_providers.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
   await EasyLocalization.ensureInitialized();
-  await Hive.initFlutter();
+
   final tmpDir = await getApplicationDocumentsDirectory();
   final storage = await HydratedStorage.build(storageDirectory: tmpDir);
 
