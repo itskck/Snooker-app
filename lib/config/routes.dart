@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:routemaster/routemaster.dart';
-import 'package:snookerpad2/ui/screens/frames/new_frame.dart';
-import 'package:snookerpad2/ui/screens/home_skeleton.dart';
+import 'package:snookerpad/ui/screens/frames/new_frame.dart';
+import 'package:snookerpad/ui/screens/home_skeleton.dart';
 
 class Router {
   static final RouteMap onboardingCompletedRoutemap = RouteMap(

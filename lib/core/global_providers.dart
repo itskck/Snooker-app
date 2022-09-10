@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:snookerpad2/bloc/frames/frames_cubit.dart';
-import 'package:snookerpad2/bloc/players/players_cubit.dart';
-import 'package:snookerpad2/bloc/theme/theme_cubit.dart';
-import 'package:snookerpad2/bloc/user/user_cubit.dart';
-import 'package:snookerpad2/core/app.dart';
+import 'package:snookerpad/bloc/frames/frames_cubit.dart';
+import 'package:snookerpad/bloc/players/players_cubit.dart';
+import 'package:snookerpad/bloc/theme/theme_cubit.dart';
+import 'package:snookerpad/bloc/user/user_cubit.dart';
+import 'package:snookerpad/core/app.dart';
 
 class GlobalProviders extends StatelessWidget {
   const GlobalProviders({

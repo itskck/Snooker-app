@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
-import 'package:snookerpad2/models/frame/frame.dart';
+import 'package:snookerpad/models/frame/frame.dart';
 
 part 'frames_state.dart';
 

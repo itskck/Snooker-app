@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:snookerpad2/ui/screens/screen_scaffold.dart';
+import 'package:snookerpad/ui/screens/screen_scaffold.dart';
 import 'package:wheel_chooser/wheel_chooser.dart';
 
 class NewFrame extends StatelessWidget {

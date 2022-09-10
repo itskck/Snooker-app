@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:snookerpad2/utils/uint8list_converter.dart';
+import 'package:snookerpad/utils/uint8list_converter.dart';
 
 part 'player.freezed.dart';
 part 'player.g.dart';

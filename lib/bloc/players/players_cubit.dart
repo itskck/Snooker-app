@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
-import 'package:snookerpad2/models/player/player.dart';
+import 'package:snookerpad/models/player/player.dart';
 
 part 'players_state.dart';
 

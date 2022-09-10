@@ -2,8 +2,8 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:routemaster/routemaster.dart';
-import 'package:snookerpad2/bloc/theme/theme_cubit.dart';
-import 'package:snookerpad2/config/routes.dart' as r;
+import 'package:snookerpad/bloc/theme/theme_cubit.dart';
+import 'package:snookerpad/config/routes.dart' as r;
 
 class App extends StatelessWidget {
   const App({super.key});

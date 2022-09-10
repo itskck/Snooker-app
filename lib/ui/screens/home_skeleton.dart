@@ -1,9 +1,9 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:snookerpad2/ui/screens/home/leaderboard.dart';
-import 'package:snookerpad2/ui/screens/home/rules.dart';
-import 'package:snookerpad2/ui/screens/home/scoreboard.dart';
-import 'package:snookerpad2/ui/screens/home/settings.dart';
+import 'package:snookerpad/ui/screens/home/leaderboard.dart';
+import 'package:snookerpad/ui/screens/home/rules.dart';
+import 'package:snookerpad/ui/screens/home/scoreboard.dart';
+import 'package:snookerpad/ui/screens/home/settings.dart';
 
 class HomeSkeleton extends StatefulWidget {
   const HomeSkeleton({super.key});
@@ -34,7 +34,7 @@ class _HomeSkeletonState extends State<HomeSkeleton> {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(8),
+          padding: const EdgeInsets.all(16),
           child: screens[index],
         ),
       ),

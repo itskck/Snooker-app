@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:snookerpad2/bloc/players/players_cubit.dart';
-import 'package:snookerpad2/models/player/player.dart';
-import 'package:snookerpad2/ui/screens/home/scoreboard.dart';
-import 'package:snookerpad2/ui/widgets/leaderboard_row.dart';
-import 'package:snookerpad2/ui/widgets/leaderboard_title.dart';
+import 'package:snookerpad/bloc/players/players_cubit.dart';
+import 'package:snookerpad/models/player/player.dart';
+import 'package:snookerpad/ui/widgets/leaderboard_row.dart';
+import 'package:snookerpad/ui/widgets/leaderboard_title.dart';
 
 class Leaderboard extends StatelessWidget {
   const Leaderboard({super.key});
@@ -26,8 +25,13 @@ class Leaderboard extends StatelessWidget {
                   );
                 },
                 separatorBuilder: (_, __) {
-                  return SizedBox(
-                    height: 10,
+                  return Padding(
+                    padding: EdgeInsets.symmetric(vertical: 5),
+                    child: Container(
+                      height: 1,
+                      width: MediaQuery.of(context).size.width * 0.7,
+                      color: Colors.greenAccent,
+                    ),
                   );
                 },
               ),

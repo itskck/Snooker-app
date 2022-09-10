@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:snookerpad2/models/player/player.dart';
+import 'package:snookerpad/models/player/player.dart';
 
 class LeaderboardRow extends StatelessWidget {
   const LeaderboardRow({super.key, required this.player});
@@ -51,6 +51,12 @@ class LeaderboardRow extends StatelessWidget {
         Expanded(
           flex: 2,
           child: Text(player.maxbreak.toString()),
+        ),
+        Expanded(
+          child: IconButton(
+            icon: Icon(Icons.edit),
+            onPressed: () {},
+          ),
         ),
       ],
     );
