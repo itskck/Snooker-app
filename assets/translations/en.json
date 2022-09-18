@@ -1,0 +1,18 @@
+{
+    "scoreboard": "Play",
+    "rules": "Rules",
+    "leaderboard": "Leaderboards",
+    "settings": "Settings",
+    "new_frame": "New frame",
+    "load_frame": "Load frame",
+    "player": "Player",
+    "frames_won": "W",
+    "frames_lost": "L",
+    "win_ratio": "%",
+    "max_break": "Break",
+    "enable_dark_mode": "Dark mode",
+    "stat_frames_won": "Frames won",
+    "stat_frames_lost": "Frames lost",
+    "stat_win_ratio": "Win ratio",
+    "stat_max_break": "Max break"
+}
