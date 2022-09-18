@@ -4,3 +4,8 @@ enum sortTypes {
   ratio,
   maxbreak,
 }
+
+enum editParam {
+  image,
+  name,
+}

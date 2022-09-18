@@ -9,5 +9,10 @@
     "frames_won": "W",
     "frames_lost": "P",
     "win_ratio": "%",
-    "max_break": "Break"
+    "max_break": "Break",
+    "enable_dark_mode": "Tryb nocny",
+    "stat_frames_won": "Frejmy wygrane",
+    "stat_frames_lost": "Frejmy przegrane",
+    "stat_win_ratio": "Procent wygranych",
+    "stat_max_break": "Największy break"
 }

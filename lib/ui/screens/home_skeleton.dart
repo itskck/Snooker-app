@@ -33,10 +33,7 @@ class _HomeSkeletonState extends State<HomeSkeleton> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: screens[index],
-        ),
+        child: screens[index],
       ),
       bottomNavigationBar: NavigationBar(
         selectedIndex: index,
