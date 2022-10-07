@@ -14,5 +14,7 @@
     "stat_frames_won": "Frejmy wygrane",
     "stat_frames_lost": "Frejmy przegrane",
     "stat_win_ratio": "Procent wygranych",
-    "stat_max_break": "Największy break"
+    "stat_max_break": "Największy break",
+    "clear_data": "Wyczyść dane",
+    "delete_player": "Usuń gracza"
 }

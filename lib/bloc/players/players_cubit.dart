@@ -1,6 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:snookerpad/models/player/player.dart';
 import 'package:snookerpad/utils/enums.dart';
 import 'package:snookerpad/utils/utils.dart';
@@ -12,6 +13,19 @@ class PlayersCubit extends HydratedCubit<PlayersState> {
 
   List<Player> get players =>
       state is PlayersWithData ? (state as PlayersWithData).players : [];
+
+  Future<void> updateImage(Player player) async {
+    final ImagePicker picker = ImagePicker();
+    final XFile? newImage = await picker.pickImage(
+      source: ImageSource.gallery,
+      imageQuality: 30,
+      preferredCameraDevice: CameraDevice.front,
+    );
+    if (newImage == null) return;
+
+    final bytes = await newImage.readAsBytes();
+    editPlayer(player, image: bytes);
+  }
 
   void addPlayer(Player player) {
     List<Player> newPlayerList = players;

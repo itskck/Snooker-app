@@ -16,17 +16,16 @@ class PlayerAvatar extends StatelessWidget {
   Widget build(BuildContext context) {
     return CircleAvatar(
       maxRadius: radius,
-      backgroundColor: Theme.of(context).primaryColor,
+      backgroundColor: Theme.of(context).backgroundColor,
+      foregroundImage:
+          player.picture != null ? Image.memory(player.picture!).image : null,
       child: player.picture == null
           ? Text(
               player.name[0].toUpperCase(),
               style: Theme.of(context).textTheme.headline5,
               textAlign: TextAlign.center,
             )
-          : Image.memory(
-              player.picture!,
-              fit: BoxFit.contain,
-            ),
+          : CircularProgressIndicator(),
     );
   }
 }

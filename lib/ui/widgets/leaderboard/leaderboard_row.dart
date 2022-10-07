@@ -71,10 +71,6 @@ class _LeaderboardRowState extends State<LeaderboardRow> {
                 PlayerPage(
                   player: widget.player,
                 ),
-              ).then(
-                (value) => setState(
-                  () {},
-                ),
               );
             },
           ),

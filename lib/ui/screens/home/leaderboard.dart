@@ -1,10 +1,13 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:snookerpad/bloc/players/players_cubit.dart';
+import 'package:snookerpad/core/app.dart';
 import 'package:snookerpad/models/player/player.dart';
 import 'package:snookerpad/ui/widgets/common/loading_widget.dart';
 import 'package:snookerpad/ui/widgets/leaderboard/leaderboard_row.dart';
 import 'package:snookerpad/ui/widgets/leaderboard/leaderboard_title.dart';
+import 'package:snookerpad/ui/widgets/leaderboard/sort_chips.dart';
 
 class Leaderboard extends StatefulWidget {
   const Leaderboard({super.key});
@@ -19,19 +22,30 @@ class _LeaderboardState extends State<Leaderboard> {
     return BlocBuilder<PlayersCubit, PlayersState>(
       builder: (context, state) {
         if (state is PlayersWithData) {
-          return SingleChildScrollView(
-            physics: BouncingScrollPhysics(),
-            child: Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(
-                    vertical: 10,
-                    horizontal: 16,
-                  ),
-                  child: const LeaderboardTitle(),
+          return Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 16,
+                  vertical: 32,
                 ),
-                ListView.separated(
-                  physics: NeverScrollableScrollPhysics(),
+                child: Text(
+                  tr('leaderboard'),
+                  style: Theme.of(context).textTheme.headline4,
+                ),
+              ),
+              const SortChips(),
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  vertical: 10,
+                  horizontal: 16,
+                ),
+                child: const LeaderboardTitle(),
+              ),
+              Expanded(
+                child: ListView.separated(
+                  physics: BouncingScrollPhysics(),
                   shrinkWrap: true,
                   itemCount: state.players.length,
                   itemBuilder: (BuildContext context, int index) {
@@ -56,7 +70,9 @@ class _LeaderboardState extends State<Leaderboard> {
                     );
                   },
                 ),
-                IconButton(
+              ),
+              Center(
+                child: IconButton(
                   onPressed: () {
                     BlocProvider.of<PlayersCubit>(context).addPlayer(
                       Player(
@@ -69,9 +85,9 @@ class _LeaderboardState extends State<Leaderboard> {
                     );
                   },
                   icon: Icon(Icons.add),
-                )
-              ],
-            ),
+                ),
+              )
+            ],
           );
         } else if (state is PlayersChangingState) {
           return LoadingWidget();

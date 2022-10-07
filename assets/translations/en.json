@@ -14,5 +14,7 @@
     "stat_frames_won": "Frames won",
     "stat_frames_lost": "Frames lost",
     "stat_win_ratio": "Win ratio",
-    "stat_max_break": "Max break"
+    "stat_max_break": "Max break",
+    "clear_data": "Clear data",
+    "delete_player": "Delete Player"
 }
