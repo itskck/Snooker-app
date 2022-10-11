@@ -144,7 +144,7 @@ class __$$_FrameCopyWithImpl<$Res> extends _$FrameCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Frame with DiagnosticableTreeMixin implements _Frame {
+class _$_Frame implements _Frame {
   _$_Frame(
       {required this.player1Id,
       required this.player2Id,
@@ -170,20 +170,8 @@ class _$_Frame with DiagnosticableTreeMixin implements _Frame {
   bool isFinished;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'Frame(player1Id: $player1Id, player2Id: $player2Id, player1Scores: $player1Scores, player2Scores: $player2Scores, isFinished: $isFinished)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'Frame'))
-      ..add(DiagnosticsProperty('player1Id', player1Id))
-      ..add(DiagnosticsProperty('player2Id', player2Id))
-      ..add(DiagnosticsProperty('player1Scores', player1Scores))
-      ..add(DiagnosticsProperty('player2Scores', player2Scores))
-      ..add(DiagnosticsProperty('isFinished', isFinished));
   }
 
   @JsonKey(ignore: true)

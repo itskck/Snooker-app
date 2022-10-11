@@ -3,7 +3,6 @@ import 'package:flutter/foundation.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:snookerpad/models/player/player.dart';
-import 'package:snookerpad/utils/enums.dart';
 import 'package:snookerpad/utils/utils.dart';
 
 part 'players_state.dart';
@@ -33,7 +32,8 @@ class PlayersCubit extends HydratedCubit<PlayersState> {
     int lastId = getMaxId(newPlayerList);
     newPlayerList.add(
       player.copyWith(
-          id: lastId + 1, name: 'player no. ${lastId + 1} madafakkafakfakfak'),
+        id: lastId + 1,
+      ),
     );
 
     emit(PlayersWithData(newPlayerList));

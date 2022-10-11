@@ -155,14 +155,15 @@ class __$$_PlayerCopyWithImpl<$Res> extends _$PlayerCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Player with DiagnosticableTreeMixin implements _Player {
-  const _$_Player(
+class _$_Player extends _Player {
+  _$_Player(
       {required this.id,
       required this.name,
       required this.maxbreak,
       required this.frameswon,
       required this.frameslost,
-      @Uint8ListConverter() this.picture});
+      @Uint8ListConverter() this.picture})
+      : super._();
 
   factory _$_Player.fromJson(Map<String, dynamic> json) =>
       _$$_PlayerFromJson(json);
@@ -182,21 +183,8 @@ class _$_Player with DiagnosticableTreeMixin implements _Player {
   final Uint8List? picture;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'Player(id: $id, name: $name, maxbreak: $maxbreak, frameswon: $frameswon, frameslost: $frameslost, picture: $picture)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'Player'))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('name', name))
-      ..add(DiagnosticsProperty('maxbreak', maxbreak))
-      ..add(DiagnosticsProperty('frameswon', frameswon))
-      ..add(DiagnosticsProperty('frameslost', frameslost))
-      ..add(DiagnosticsProperty('picture', picture));
   }
 
   @override
@@ -237,14 +225,15 @@ class _$_Player with DiagnosticableTreeMixin implements _Player {
   }
 }
 
-abstract class _Player implements Player {
-  const factory _Player(
+abstract class _Player extends Player {
+  factory _Player(
       {required final int id,
       required final String name,
       required final int maxbreak,
       required final int frameswon,
       required final int frameslost,
       @Uint8ListConverter() final Uint8List? picture}) = _$_Player;
+  _Player._() : super._();
 
   factory _Player.fromJson(Map<String, dynamic> json) = _$_Player.fromJson;
 

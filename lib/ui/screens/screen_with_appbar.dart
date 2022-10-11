@@ -1,25 +1,26 @@
 import 'package:flutter/material.dart';
 
-class WidgetWithAppbar extends StatelessWidget {
-  const WidgetWithAppbar({
+class ScreenWithAppbar extends StatelessWidget {
+  const ScreenWithAppbar({
     super.key,
-    required this.title,
     required this.child,
+    this.title,
   });
 
-  final String title;
   final Widget child;
+  final String? title;
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        children: [
-          AppBar(
-            title: Text(title),
-          ),
-          child
-        ],
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          title ?? "",
+          style: Theme.of(context).textTheme.headline4,
+        ),
+      ),
+      body: SingleChildScrollView(
+        child: child,
       ),
     );
   }

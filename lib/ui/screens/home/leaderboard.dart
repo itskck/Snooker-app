@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:routemaster/routemaster.dart';
 import 'package:snookerpad/bloc/players/players_cubit.dart';
 import 'package:snookerpad/core/app.dart';
 import 'package:snookerpad/models/player/player.dart';
@@ -8,6 +9,8 @@ import 'package:snookerpad/ui/widgets/common/loading_widget.dart';
 import 'package:snookerpad/ui/widgets/leaderboard/leaderboard_row.dart';
 import 'package:snookerpad/ui/widgets/leaderboard/leaderboard_title.dart';
 import 'package:snookerpad/ui/widgets/leaderboard/sort_chips.dart';
+import 'package:snookerpad/ui/widgets/player/player_create.dart';
+import 'package:snookerpad/utils/utils.dart';
 
 class Leaderboard extends StatefulWidget {
   const Leaderboard({super.key});
@@ -73,18 +76,14 @@ class _LeaderboardState extends State<Leaderboard> {
               ),
               Center(
                 child: IconButton(
-                  onPressed: () {
-                    BlocProvider.of<PlayersCubit>(context).addPlayer(
-                      Player(
-                        id: 1,
-                        name: 'name',
-                        maxbreak: 12,
-                        frameswon: 123,
-                        frameslost: 123,
-                      ),
-                    );
-                  },
-                  icon: Icon(Icons.add),
+                  onPressed: () => showDialogWindow(
+                    context,
+                    PlayerCreate(),
+                  ),
+                  icon: Icon(
+                    Icons.add,
+                    size: 35,
+                  ),
                 ),
               )
             ],
