@@ -7,7 +7,7 @@ part 'player.g.dart';
 
 @freezed
 class Player with _$Player {
-  const factory Player({
+  factory Player({
     required int id,
     required String name,
     required int maxbreak,
@@ -15,6 +15,11 @@ class Player with _$Player {
     required int frameslost,
     @Uint8ListConverter() Uint8List? picture,
   }) = _Player;
+
+  Player._();
+
+  String get ratio =>
+      frameslost != 0 ? '${(frameswon / frameslost * 100).round()}%' : '0';
 
   factory Player.fromJson(Map<String, Object?> json) => _$PlayerFromJson(json);
 }

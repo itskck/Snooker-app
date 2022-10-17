@@ -16,5 +16,10 @@
     "stat_win_ratio": "Win ratio",
     "stat_max_break": "Max break",
     "clear_data": "Clear data",
-    "delete_player": "Delete Player"
+    "delete_player": "Delete Player",
+    "sort_won": "Won",
+    "sort_lost": "Lost",
+    "sort_ratio": "Win ratio",
+    "sort_break": "Max break",
+    "add_player_title": "Add player"
 }
