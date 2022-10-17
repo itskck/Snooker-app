@@ -19,7 +19,7 @@ class _SortChipsState extends State<SortChips> {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
         child: Wrap(
-          spacing: 10,
+          spacing: 5,
           children: List<ChoiceChip>.generate(
             sortTypes.values.length,
             (index) => ChoiceChip(
