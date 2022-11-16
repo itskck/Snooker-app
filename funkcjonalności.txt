@@ -18,8 +18,8 @@
     3.2 Możliwość zmiany języka zasad (angielski/polski)
 4. Ekran ustawień 
   ✅  4.1 Możliwość włączenia Night Mode
-    4.2 Możliwość zmiany języka aplikacji (angielski/polski)
+  ✅  4.2 Możliwość zmiany języka aplikacji (angielski/polski)
   ✅  4.3 Możliwość usunięcia wszystkich statystyk użytkowników
 5. Różne
-    5.1 Material Design 3 focus
+  ✅  5.1 Material Design 3 focus
     
