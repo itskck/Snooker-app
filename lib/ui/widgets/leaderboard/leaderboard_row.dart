@@ -1,8 +1,6 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:snookerpad/models/player/player.dart';
-import 'package:snookerpad/ui/screens/user/player_page.dart';
+import 'package:snookerpad/ui/widgets/player/player_page.dart';
 import 'package:snookerpad/ui/widgets/player/player_avatar.dart';
 import 'package:snookerpad/utils/utils.dart';
 
@@ -19,7 +17,6 @@ class LeaderboardRow extends StatefulWidget {
 }
 
 class _LeaderboardRowState extends State<LeaderboardRow> {
-  @override
   Widget build(BuildContext context) {
     return Row(
       children: [

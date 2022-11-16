@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:snookerpad/bloc/players/players_cubit.dart';
 import 'package:snookerpad/models/player/player.dart';
 import 'package:snookerpad/ui/widgets/player/player_info_bar.dart';
-import 'package:snookerpad/ui/widgets/player/player_stat.dart';
 import 'package:snookerpad/ui/widgets/player/player_stats.dart';
 
 class PlayerPage extends StatefulWidget {

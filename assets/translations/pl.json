@@ -21,5 +21,10 @@
     "sort_lost": "Przegrane",
     "sort_ratio": "Procent wygranych",
     "sort_break": "Największy break",
-    "add_player_title": "Dodaj zwodnika"
+    "add_player_title": "Dodaj zwodnika",
+    "choose_players": "Wybierz graczy",
+    "delete_all_players": "Wyczyść dane wszystkich graczy",
+    "pick_language": "Język aplikacji",
+    "english": "Angielski",
+    "polish": "Polski"
 }

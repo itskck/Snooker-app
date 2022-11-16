@@ -25,7 +25,7 @@ class PlayerAvatar extends StatelessWidget {
       child: player != null
           ? player!.picture == null
               ? Text(
-                  player!.name[0].toUpperCase(),
+                  player!.name != null ? player!.name[0].toUpperCase() : '',
                   style: Theme.of(context).textTheme.headline5,
                   textAlign: TextAlign.center,
                 )

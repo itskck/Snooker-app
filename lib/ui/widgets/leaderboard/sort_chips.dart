@@ -1,5 +1,6 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:snookerpad/bloc/players/players_cubit.dart';
 import 'package:snookerpad/utils/enums.dart';
 import 'package:snookerpad/utils/utils.dart';
 
@@ -28,6 +29,8 @@ class _SortChipsState extends State<SortChips> {
               ),
               selected: value == index,
               onSelected: (selected) {
+                BlocProvider.of<PlayersCubit>(context)
+                    .changeSortType(sortType: sortTypes.values[index]);
                 setState(() {
                   value = selected ? index : null;
                 });

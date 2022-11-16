@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:snookerpad/models/player/player.dart';
+import 'package:snookerpad/utils/enums.dart';
 import 'package:snookerpad/utils/utils.dart';
 
 part 'players_state.dart';
@@ -12,6 +13,30 @@ class PlayersCubit extends HydratedCubit<PlayersState> {
 
   List<Player> get players =>
       state is PlayersWithData ? (state as PlayersWithData).players : [];
+
+  void changeSortType({required sortTypes sortType}) {
+    if (state is PlayersWithData) {
+      final List<Player> playersToEmit = (state as PlayersWithData).players;
+
+      switch (sortType) {
+        case sortTypes.won:
+          playersToEmit.sort(((a, b) => a.frameswon.compareTo(b.frameswon)));
+          break;
+        case sortTypes.lost:
+          playersToEmit.sort(((a, b) => a.frameslost.compareTo(b.frameslost)));
+          break;
+        case sortTypes.ratio:
+          playersToEmit.sort(((a, b) => a.ratio.compareTo(b.ratio)));
+          break;
+        case sortTypes.maxbreak:
+          playersToEmit.sort(((a, b) => a.maxbreak.compareTo(b.maxbreak)));
+          break;
+      }
+      print(playersToEmit);
+
+      emit(PlayersWithData(playersToEmit.reversed.toList()));
+    }
+  }
 
   Future<void> updateImage(Player player) async {
     final ImagePicker picker = ImagePicker();

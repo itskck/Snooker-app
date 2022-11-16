@@ -16,12 +16,6 @@ class HomeSkeleton extends StatefulWidget {
 
 class _HomeSkeletonState extends State<HomeSkeleton> {
   late int index;
-  final List<Widget> screens = const [
-    Scoreboard(),
-    Rules(),
-    Leaderboard(),
-    Settings(),
-  ];
 
   @override
   void initState() {
@@ -31,6 +25,13 @@ class _HomeSkeletonState extends State<HomeSkeleton> {
 
   @override
   Widget build(BuildContext context) {
+    final List<Widget> screens = [
+      Scoreboard(),
+      Rules(),
+      Leaderboard(),
+      Settings(onChanged: (locale) => context.setLocale(locale)),
+    ];
+
     return Scaffold(
       body: SafeArea(
         child: screens[index],

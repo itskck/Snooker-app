@@ -1,6 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:snookerpad/models/player/player.dart';
 
 class LeaderboardTitle extends StatelessWidget {
   const LeaderboardTitle({super.key});

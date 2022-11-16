@@ -22,6 +22,9 @@ Frame _$FrameFromJson(Map<String, dynamic> json) {
 mixin _$Frame {
   int get player1Id => throw _privateConstructorUsedError;
   int get player2Id => throw _privateConstructorUsedError;
+  bool get isPlayerOneCurrentPlayer => throw _privateConstructorUsedError;
+  set isPlayerOneCurrentPlayer(bool value) =>
+      throw _privateConstructorUsedError;
   List<String?> get player1Scores => throw _privateConstructorUsedError;
   set player1Scores(List<String?> value) => throw _privateConstructorUsedError;
   List<String?> get player2Scores => throw _privateConstructorUsedError;
@@ -41,6 +44,7 @@ abstract class $FrameCopyWith<$Res> {
   $Res call(
       {int player1Id,
       int player2Id,
+      bool isPlayerOneCurrentPlayer,
       List<String?> player1Scores,
       List<String?> player2Scores,
       bool isFinished});
@@ -58,6 +62,7 @@ class _$FrameCopyWithImpl<$Res> implements $FrameCopyWith<$Res> {
   $Res call({
     Object? player1Id = freezed,
     Object? player2Id = freezed,
+    Object? isPlayerOneCurrentPlayer = freezed,
     Object? player1Scores = freezed,
     Object? player2Scores = freezed,
     Object? isFinished = freezed,
@@ -71,6 +76,10 @@ class _$FrameCopyWithImpl<$Res> implements $FrameCopyWith<$Res> {
           ? _value.player2Id
           : player2Id // ignore: cast_nullable_to_non_nullable
               as int,
+      isPlayerOneCurrentPlayer: isPlayerOneCurrentPlayer == freezed
+          ? _value.isPlayerOneCurrentPlayer
+          : isPlayerOneCurrentPlayer // ignore: cast_nullable_to_non_nullable
+              as bool,
       player1Scores: player1Scores == freezed
           ? _value.player1Scores
           : player1Scores // ignore: cast_nullable_to_non_nullable
@@ -95,6 +104,7 @@ abstract class _$$_FrameCopyWith<$Res> implements $FrameCopyWith<$Res> {
   $Res call(
       {int player1Id,
       int player2Id,
+      bool isPlayerOneCurrentPlayer,
       List<String?> player1Scores,
       List<String?> player2Scores,
       bool isFinished});
@@ -113,6 +123,7 @@ class __$$_FrameCopyWithImpl<$Res> extends _$FrameCopyWithImpl<$Res>
   $Res call({
     Object? player1Id = freezed,
     Object? player2Id = freezed,
+    Object? isPlayerOneCurrentPlayer = freezed,
     Object? player1Scores = freezed,
     Object? player2Scores = freezed,
     Object? isFinished = freezed,
@@ -126,6 +137,10 @@ class __$$_FrameCopyWithImpl<$Res> extends _$FrameCopyWithImpl<$Res>
           ? _value.player2Id
           : player2Id // ignore: cast_nullable_to_non_nullable
               as int,
+      isPlayerOneCurrentPlayer: isPlayerOneCurrentPlayer == freezed
+          ? _value.isPlayerOneCurrentPlayer
+          : isPlayerOneCurrentPlayer // ignore: cast_nullable_to_non_nullable
+              as bool,
       player1Scores: player1Scores == freezed
           ? _value.player1Scores
           : player1Scores // ignore: cast_nullable_to_non_nullable
@@ -148,6 +163,7 @@ class _$_Frame implements _Frame {
   _$_Frame(
       {required this.player1Id,
       required this.player2Id,
+      this.isPlayerOneCurrentPlayer = true,
       this.player1Scores = const [],
       this.player2Scores = const [],
       this.isFinished = false});
@@ -161,6 +177,9 @@ class _$_Frame implements _Frame {
   final int player2Id;
   @override
   @JsonKey()
+  bool isPlayerOneCurrentPlayer;
+  @override
+  @JsonKey()
   List<String?> player1Scores;
   @override
   @JsonKey()
@@ -171,7 +190,7 @@ class _$_Frame implements _Frame {
 
   @override
   String toString() {
-    return 'Frame(player1Id: $player1Id, player2Id: $player2Id, player1Scores: $player1Scores, player2Scores: $player2Scores, isFinished: $isFinished)';
+    return 'Frame(player1Id: $player1Id, player2Id: $player2Id, isPlayerOneCurrentPlayer: $isPlayerOneCurrentPlayer, player1Scores: $player1Scores, player2Scores: $player2Scores, isFinished: $isFinished)';
   }
 
   @JsonKey(ignore: true)
@@ -191,6 +210,7 @@ abstract class _Frame implements Frame {
   factory _Frame(
       {required final int player1Id,
       required final int player2Id,
+      bool isPlayerOneCurrentPlayer,
       List<String?> player1Scores,
       List<String?> player2Scores,
       bool isFinished}) = _$_Frame;
@@ -201,6 +221,9 @@ abstract class _Frame implements Frame {
   int get player1Id;
   @override
   int get player2Id;
+  @override
+  bool get isPlayerOneCurrentPlayer;
+  set isPlayerOneCurrentPlayer(bool value);
   @override
   List<String?> get player1Scores;
   set player1Scores(List<String?> value);

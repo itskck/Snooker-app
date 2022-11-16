@@ -9,6 +9,8 @@ part of 'frame.dart';
 _$_Frame _$$_FrameFromJson(Map<String, dynamic> json) => _$_Frame(
       player1Id: json['player1Id'] as int,
       player2Id: json['player2Id'] as int,
+      isPlayerOneCurrentPlayer:
+          json['isPlayerOneCurrentPlayer'] as bool? ?? true,
       player1Scores: (json['player1Scores'] as List<dynamic>?)
               ?.map((e) => e as String?)
               .toList() ??
@@ -23,6 +25,7 @@ _$_Frame _$$_FrameFromJson(Map<String, dynamic> json) => _$_Frame(
 Map<String, dynamic> _$$_FrameToJson(_$_Frame instance) => <String, dynamic>{
       'player1Id': instance.player1Id,
       'player2Id': instance.player2Id,
+      'isPlayerOneCurrentPlayer': instance.isPlayerOneCurrentPlayer,
       'player1Scores': instance.player1Scores,
       'player2Scores': instance.player2Scores,
       'isFinished': instance.isFinished,

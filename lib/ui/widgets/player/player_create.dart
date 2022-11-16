@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -6,7 +8,6 @@ import 'package:image_picker/image_picker.dart';
 import 'package:routemaster/routemaster.dart';
 import 'package:snookerpad/bloc/players/players_cubit.dart';
 import 'package:snookerpad/models/player/player.dart';
-import 'package:snookerpad/ui/screens/screen_with_appbar.dart';
 import 'package:snookerpad/ui/widgets/common/primary_button.dart';
 import 'package:snookerpad/ui/widgets/player/player_avatar.dart';
 import 'package:snookerpad/ui/widgets/player/player_form_field.dart';
