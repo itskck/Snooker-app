@@ -14,17 +14,7 @@ void main() async {
 
   HydratedBlocOverrides.runZoned(
     () => runApp(
-      EasyLocalization(
-        supportedLocales: const [
-          Locale('pl'),
-          Locale('en'),
-        ],
-        fallbackLocale: const Locale('en'),
-        path: 'assets/translations',
-        useOnlyLangCode: true,
-        useFallbackTranslations: true,
-        child: const GlobalProviders(),
-      ),
+      const GlobalProviders(),
     ),
     storage: storage,
   );

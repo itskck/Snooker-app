@@ -1,5 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:snookerpad/bloc/language/language_cubit.dart';
 import 'package:snookerpad/ui/screens/home/leaderboard.dart';
 import 'package:snookerpad/ui/screens/home/rules.dart';
 import 'package:snookerpad/ui/screens/home/scoreboard.dart';
@@ -29,7 +31,10 @@ class _HomeSkeletonState extends State<HomeSkeleton> {
       Scoreboard(),
       Rules(),
       Leaderboard(),
-      Settings(onChanged: (locale) => context.setLocale(locale)),
+      Settings(
+        onChanged: (locale) => BlocProvider.of<LanguageCubit>(context)
+            .changeLocale(locale, context),
+      ),
     ];
 
     return Scaffold(

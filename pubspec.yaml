@@ -9,12 +9,17 @@ environment:
   sdk: ">=2.17.6 <3.0.0"
 
 dependencies:
+  advance_pdf_viewer:
+    git:
+      url: https://github.com/lohanidamodar/pdf_viewer.git
+      ref: 4e5d96be29de515f1081c0b6897741b8dca84722
   build_runner: ^2.2.0
   easy_localization: ^3.0.1
   equatable: ^2.0.3
   flutter:
     sdk: flutter
   flutter_bloc: ^8.0.1
+  flutter_pdfview: ^1.2.5
   freezed: ^2.1.0+1
   hive: ^2.2.3
   hive_flutter: ^1.1.0
@@ -25,6 +30,7 @@ dependencies:
   localization: ^2.1.0
   lottie: ^1.4.3
   path_provider: ^2.0.11
+  rolling_switch: ^0.0.2
   routemaster: ^1.0.1
   shared_preferences: ^2.0.15
   wheel_chooser: ^1.0.0
@@ -39,3 +45,4 @@ flutter:
   assets:
     - assets/translations/
     - assets/images/
+    - assets/rules/
