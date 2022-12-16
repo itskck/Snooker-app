@@ -57,9 +57,15 @@ class NewFrame extends StatelessWidget {
                         datas: names,
                       ),
                     ),
-                    Icon(Icons.keyboard_arrow_up),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 30),
+                      child: Icon(Icons.keyboard_arrow_up),
+                    ),
                     Text('vs'),
-                    Icon(Icons.keyboard_arrow_down),
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 30),
+                      child: Icon(Icons.keyboard_arrow_down),
+                    ),
                     SizedBox(
                       height: 100,
                       width: MediaQuery.of(context).size.width,

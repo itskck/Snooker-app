@@ -8,9 +8,8 @@ class Frame with _$Frame {
   factory Frame({
     required final int player1Id,
     required final int player2Id,
-    @Default(true) bool isPlayerOneCurrentPlayer,
-    @Default([]) List<String?> player1Scores,
-    @Default([]) List<String?> player2Scores,
+    @Default(0) int player1Points,
+    @Default(0) int player2Points,
     @Default(false) bool isFinished,
   }) = _Frame;
 

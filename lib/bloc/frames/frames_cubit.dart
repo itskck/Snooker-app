@@ -1,7 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:snookerpad/models/frame/frame.dart';
-import 'package:snookerpad/utils/enums.dart';
 
 part 'frames_state.dart';
 
@@ -15,6 +14,20 @@ class FramesCubit extends HydratedCubit<FramesState> {
       return (state as FramesWithOngoing).previousFrames;
     } else {
       return [];
+    }
+  }
+
+  Future<void> startFrame({
+    required int player1id,
+    required int player2id,
+  }) async {
+    final Frame frame = Frame(player1Id: player1id, player2Id: player2id);
+    emit(FramesWithOngoing(ongoingFrames, frame));
+  }
+
+  Future<void> addPlayerPoints(int playerId, int points) async {
+    if (state is FramesWithOngoing) {
+      Frame frame = (state as FramesWithOngoing).ongoingFrame;
     }
   }
 

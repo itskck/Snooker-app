@@ -7,7 +7,7 @@ import 'package:lottie/lottie.dart';
 import 'package:rolling_switch/rolling_switch.dart';
 import 'package:snookerpad/bloc/language/language_cubit.dart';
 import 'package:snookerpad/bloc/rules/rules_cubit.dart';
-import 'package:snookerpad/core/loader.dart';
+import 'package:snookerpad/ui/widgets/common/loader.dart';
 import 'package:snookerpad/ui/widgets/rules/rules_language_picker.dart';
 
 enum RulesLocale {
@@ -43,7 +43,7 @@ class _RulesState extends State<Rules> {
                 return PDFViewer(
                   document: state.pdfDocument,
                   pickerButtonColor: Theme.of(context).scaffoldBackgroundColor,
-                  lazyLoad: false,
+                  lazyLoad: true,
                   progressIndicator: Loader(),
                 );
               else {

@@ -21,8 +21,16 @@ class _RulesLanguagePickerState extends State<RulesLanguagePicker> {
         if (state is RulesLanguageSet)
           return ToggleButtons(
             children: [
-              Text('en'),
-              Text('pl'),
+              Image.asset(
+                flagEn,
+                height: 30,
+                fit: BoxFit.fitHeight,
+              ),
+              Image.asset(
+                flagPl,
+                height: 30,
+                fit: BoxFit.fitHeight,
+              ),
             ],
             isSelected: [
               state.currentLocale == englishLocale,

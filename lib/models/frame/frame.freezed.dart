@@ -22,13 +22,10 @@ Frame _$FrameFromJson(Map<String, dynamic> json) {
 mixin _$Frame {
   int get player1Id => throw _privateConstructorUsedError;
   int get player2Id => throw _privateConstructorUsedError;
-  bool get isPlayerOneCurrentPlayer => throw _privateConstructorUsedError;
-  set isPlayerOneCurrentPlayer(bool value) =>
-      throw _privateConstructorUsedError;
-  List<String?> get player1Scores => throw _privateConstructorUsedError;
-  set player1Scores(List<String?> value) => throw _privateConstructorUsedError;
-  List<String?> get player2Scores => throw _privateConstructorUsedError;
-  set player2Scores(List<String?> value) => throw _privateConstructorUsedError;
+  int get player1Points => throw _privateConstructorUsedError;
+  set player1Points(int value) => throw _privateConstructorUsedError;
+  int get player2Points => throw _privateConstructorUsedError;
+  set player2Points(int value) => throw _privateConstructorUsedError;
   bool get isFinished => throw _privateConstructorUsedError;
   set isFinished(bool value) => throw _privateConstructorUsedError;
 
@@ -44,9 +41,8 @@ abstract class $FrameCopyWith<$Res> {
   $Res call(
       {int player1Id,
       int player2Id,
-      bool isPlayerOneCurrentPlayer,
-      List<String?> player1Scores,
-      List<String?> player2Scores,
+      int player1Points,
+      int player2Points,
       bool isFinished});
 }
 
@@ -62,9 +58,8 @@ class _$FrameCopyWithImpl<$Res> implements $FrameCopyWith<$Res> {
   $Res call({
     Object? player1Id = freezed,
     Object? player2Id = freezed,
-    Object? isPlayerOneCurrentPlayer = freezed,
-    Object? player1Scores = freezed,
-    Object? player2Scores = freezed,
+    Object? player1Points = freezed,
+    Object? player2Points = freezed,
     Object? isFinished = freezed,
   }) {
     return _then(_value.copyWith(
@@ -76,18 +71,14 @@ class _$FrameCopyWithImpl<$Res> implements $FrameCopyWith<$Res> {
           ? _value.player2Id
           : player2Id // ignore: cast_nullable_to_non_nullable
               as int,
-      isPlayerOneCurrentPlayer: isPlayerOneCurrentPlayer == freezed
-          ? _value.isPlayerOneCurrentPlayer
-          : isPlayerOneCurrentPlayer // ignore: cast_nullable_to_non_nullable
-              as bool,
-      player1Scores: player1Scores == freezed
-          ? _value.player1Scores
-          : player1Scores // ignore: cast_nullable_to_non_nullable
-              as List<String?>,
-      player2Scores: player2Scores == freezed
-          ? _value.player2Scores
-          : player2Scores // ignore: cast_nullable_to_non_nullable
-              as List<String?>,
+      player1Points: player1Points == freezed
+          ? _value.player1Points
+          : player1Points // ignore: cast_nullable_to_non_nullable
+              as int,
+      player2Points: player2Points == freezed
+          ? _value.player2Points
+          : player2Points // ignore: cast_nullable_to_non_nullable
+              as int,
       isFinished: isFinished == freezed
           ? _value.isFinished
           : isFinished // ignore: cast_nullable_to_non_nullable
@@ -104,9 +95,8 @@ abstract class _$$_FrameCopyWith<$Res> implements $FrameCopyWith<$Res> {
   $Res call(
       {int player1Id,
       int player2Id,
-      bool isPlayerOneCurrentPlayer,
-      List<String?> player1Scores,
-      List<String?> player2Scores,
+      int player1Points,
+      int player2Points,
       bool isFinished});
 }
 
@@ -123,9 +113,8 @@ class __$$_FrameCopyWithImpl<$Res> extends _$FrameCopyWithImpl<$Res>
   $Res call({
     Object? player1Id = freezed,
     Object? player2Id = freezed,
-    Object? isPlayerOneCurrentPlayer = freezed,
-    Object? player1Scores = freezed,
-    Object? player2Scores = freezed,
+    Object? player1Points = freezed,
+    Object? player2Points = freezed,
     Object? isFinished = freezed,
   }) {
     return _then(_$_Frame(
@@ -137,18 +126,14 @@ class __$$_FrameCopyWithImpl<$Res> extends _$FrameCopyWithImpl<$Res>
           ? _value.player2Id
           : player2Id // ignore: cast_nullable_to_non_nullable
               as int,
-      isPlayerOneCurrentPlayer: isPlayerOneCurrentPlayer == freezed
-          ? _value.isPlayerOneCurrentPlayer
-          : isPlayerOneCurrentPlayer // ignore: cast_nullable_to_non_nullable
-              as bool,
-      player1Scores: player1Scores == freezed
-          ? _value.player1Scores
-          : player1Scores // ignore: cast_nullable_to_non_nullable
-              as List<String?>,
-      player2Scores: player2Scores == freezed
-          ? _value.player2Scores
-          : player2Scores // ignore: cast_nullable_to_non_nullable
-              as List<String?>,
+      player1Points: player1Points == freezed
+          ? _value.player1Points
+          : player1Points // ignore: cast_nullable_to_non_nullable
+              as int,
+      player2Points: player2Points == freezed
+          ? _value.player2Points
+          : player2Points // ignore: cast_nullable_to_non_nullable
+              as int,
       isFinished: isFinished == freezed
           ? _value.isFinished
           : isFinished // ignore: cast_nullable_to_non_nullable
@@ -163,9 +148,8 @@ class _$_Frame implements _Frame {
   _$_Frame(
       {required this.player1Id,
       required this.player2Id,
-      this.isPlayerOneCurrentPlayer = true,
-      this.player1Scores = const [],
-      this.player2Scores = const [],
+      this.player1Points = 0,
+      this.player2Points = 0,
       this.isFinished = false});
 
   factory _$_Frame.fromJson(Map<String, dynamic> json) =>
@@ -177,20 +161,17 @@ class _$_Frame implements _Frame {
   final int player2Id;
   @override
   @JsonKey()
-  bool isPlayerOneCurrentPlayer;
+  int player1Points;
   @override
   @JsonKey()
-  List<String?> player1Scores;
-  @override
-  @JsonKey()
-  List<String?> player2Scores;
+  int player2Points;
   @override
   @JsonKey()
   bool isFinished;
 
   @override
   String toString() {
-    return 'Frame(player1Id: $player1Id, player2Id: $player2Id, isPlayerOneCurrentPlayer: $isPlayerOneCurrentPlayer, player1Scores: $player1Scores, player2Scores: $player2Scores, isFinished: $isFinished)';
+    return 'Frame(player1Id: $player1Id, player2Id: $player2Id, player1Points: $player1Points, player2Points: $player2Points, isFinished: $isFinished)';
   }
 
   @JsonKey(ignore: true)
@@ -210,9 +191,8 @@ abstract class _Frame implements Frame {
   factory _Frame(
       {required final int player1Id,
       required final int player2Id,
-      bool isPlayerOneCurrentPlayer,
-      List<String?> player1Scores,
-      List<String?> player2Scores,
+      int player1Points,
+      int player2Points,
       bool isFinished}) = _$_Frame;
 
   factory _Frame.fromJson(Map<String, dynamic> json) = _$_Frame.fromJson;
@@ -222,14 +202,11 @@ abstract class _Frame implements Frame {
   @override
   int get player2Id;
   @override
-  bool get isPlayerOneCurrentPlayer;
-  set isPlayerOneCurrentPlayer(bool value);
+  int get player1Points;
+  set player1Points(int value);
   @override
-  List<String?> get player1Scores;
-  set player1Scores(List<String?> value);
-  @override
-  List<String?> get player2Scores;
-  set player2Scores(List<String?> value);
+  int get player2Points;
+  set player2Points(int value);
   @override
   bool get isFinished;
   set isFinished(bool value);
