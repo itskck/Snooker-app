@@ -1,10 +1,6 @@
 import 'package:advance_pdf_viewer/advance_pdf_viewer.dart';
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_pdfview/flutter_pdfview.dart';
-import 'package:lottie/lottie.dart';
-import 'package:rolling_switch/rolling_switch.dart';
 import 'package:snookerpad/bloc/language/language_cubit.dart';
 import 'package:snookerpad/bloc/rules/rules_cubit.dart';
 import 'package:snookerpad/ui/widgets/common/loader.dart';
@@ -26,8 +22,7 @@ class _RulesState extends State<Rules> {
   @override
   void initState() {
     super.initState();
-    print(
-        (BlocProvider.of<LanguageCubit>(context).state as LanguageSet).locale);
+
     BlocProvider.of<RulesCubit>(context).initDocument();
   }
 

@@ -1,8 +1,11 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:routemaster/routemaster.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:snookerpad/bloc/language/language_cubit.dart';
 import 'package:snookerpad/ui/screens/screen_scaffold.dart';
+import 'package:snookerpad/ui/widgets/common/loader.dart';
 import 'package:snookerpad/ui/widgets/settings/clickable_settings_row.dart';
+import 'package:snookerpad/utils/constants.dart';
 
 class LanguagePickScreen extends StatelessWidget {
   const LanguagePickScreen({
@@ -15,39 +18,38 @@ class LanguagePickScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ScreenScaffold(
-      body: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 16,
-              vertical: 32,
+    return BlocBuilder<LanguageCubit, LanguageState>(
+      builder: (context, state) {
+        if (state is LanguageSet)
+          return ScreenScaffold(
+            title: tr('pick_language'),
+            body: Column(
+              children: [
+                ClickableSettingsRow(
+                  title: tr('english'),
+                  active: state.locale == englishLocale,
+                  onTap: () {
+                    onChanged(
+                      Locale('en'),
+                    );
+                  },
+                ),
+                ClickableSettingsRow(
+                  title: tr('polish'),
+                  active: state.locale == polishLocale,
+                  onTap: () {
+                    onChanged(
+                      Locale('pl'),
+                    );
+                  },
+                )
+              ],
             ),
-            child: Text(
-              tr('pick_language'),
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ),
-          ClickableSettingsRow(
-            title: tr('english'),
-            onTap: () {
-              onChanged(
-                Locale('en'),
-              );
-              Routemaster.of(context).pop();
-            },
-          ),
-          ClickableSettingsRow(
-            title: tr('polish'),
-            onTap: () {
-              onChanged(
-                Locale('pl'),
-              );
-              Routemaster.of(context).pop();
-            },
-          )
-        ],
-      ),
+          );
+        else {
+          return Loader();
+        }
+      },
     );
   }
 }

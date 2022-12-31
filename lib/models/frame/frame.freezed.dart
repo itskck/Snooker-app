@@ -26,6 +26,14 @@ mixin _$Frame {
   set player1Points(int value) => throw _privateConstructorUsedError;
   int get player2Points => throw _privateConstructorUsedError;
   set player2Points(int value) => throw _privateConstructorUsedError;
+  int get player1Break => throw _privateConstructorUsedError;
+  set player1Break(int value) => throw _privateConstructorUsedError;
+  int get player2Break => throw _privateConstructorUsedError;
+  set player2Break(int value) => throw _privateConstructorUsedError;
+  int get player1MaxBreak => throw _privateConstructorUsedError;
+  set player1MaxBreak(int value) => throw _privateConstructorUsedError;
+  int get player2MaxBreak => throw _privateConstructorUsedError;
+  set player2MaxBreak(int value) => throw _privateConstructorUsedError;
   bool get isFinished => throw _privateConstructorUsedError;
   set isFinished(bool value) => throw _privateConstructorUsedError;
 
@@ -43,6 +51,10 @@ abstract class $FrameCopyWith<$Res> {
       int player2Id,
       int player1Points,
       int player2Points,
+      int player1Break,
+      int player2Break,
+      int player1MaxBreak,
+      int player2MaxBreak,
       bool isFinished});
 }
 
@@ -60,6 +72,10 @@ class _$FrameCopyWithImpl<$Res> implements $FrameCopyWith<$Res> {
     Object? player2Id = freezed,
     Object? player1Points = freezed,
     Object? player2Points = freezed,
+    Object? player1Break = freezed,
+    Object? player2Break = freezed,
+    Object? player1MaxBreak = freezed,
+    Object? player2MaxBreak = freezed,
     Object? isFinished = freezed,
   }) {
     return _then(_value.copyWith(
@@ -79,6 +95,22 @@ class _$FrameCopyWithImpl<$Res> implements $FrameCopyWith<$Res> {
           ? _value.player2Points
           : player2Points // ignore: cast_nullable_to_non_nullable
               as int,
+      player1Break: player1Break == freezed
+          ? _value.player1Break
+          : player1Break // ignore: cast_nullable_to_non_nullable
+              as int,
+      player2Break: player2Break == freezed
+          ? _value.player2Break
+          : player2Break // ignore: cast_nullable_to_non_nullable
+              as int,
+      player1MaxBreak: player1MaxBreak == freezed
+          ? _value.player1MaxBreak
+          : player1MaxBreak // ignore: cast_nullable_to_non_nullable
+              as int,
+      player2MaxBreak: player2MaxBreak == freezed
+          ? _value.player2MaxBreak
+          : player2MaxBreak // ignore: cast_nullable_to_non_nullable
+              as int,
       isFinished: isFinished == freezed
           ? _value.isFinished
           : isFinished // ignore: cast_nullable_to_non_nullable
@@ -97,6 +129,10 @@ abstract class _$$_FrameCopyWith<$Res> implements $FrameCopyWith<$Res> {
       int player2Id,
       int player1Points,
       int player2Points,
+      int player1Break,
+      int player2Break,
+      int player1MaxBreak,
+      int player2MaxBreak,
       bool isFinished});
 }
 
@@ -115,6 +151,10 @@ class __$$_FrameCopyWithImpl<$Res> extends _$FrameCopyWithImpl<$Res>
     Object? player2Id = freezed,
     Object? player1Points = freezed,
     Object? player2Points = freezed,
+    Object? player1Break = freezed,
+    Object? player2Break = freezed,
+    Object? player1MaxBreak = freezed,
+    Object? player2MaxBreak = freezed,
     Object? isFinished = freezed,
   }) {
     return _then(_$_Frame(
@@ -134,6 +174,22 @@ class __$$_FrameCopyWithImpl<$Res> extends _$FrameCopyWithImpl<$Res>
           ? _value.player2Points
           : player2Points // ignore: cast_nullable_to_non_nullable
               as int,
+      player1Break: player1Break == freezed
+          ? _value.player1Break
+          : player1Break // ignore: cast_nullable_to_non_nullable
+              as int,
+      player2Break: player2Break == freezed
+          ? _value.player2Break
+          : player2Break // ignore: cast_nullable_to_non_nullable
+              as int,
+      player1MaxBreak: player1MaxBreak == freezed
+          ? _value.player1MaxBreak
+          : player1MaxBreak // ignore: cast_nullable_to_non_nullable
+              as int,
+      player2MaxBreak: player2MaxBreak == freezed
+          ? _value.player2MaxBreak
+          : player2MaxBreak // ignore: cast_nullable_to_non_nullable
+              as int,
       isFinished: isFinished == freezed
           ? _value.isFinished
           : isFinished // ignore: cast_nullable_to_non_nullable
@@ -150,6 +206,10 @@ class _$_Frame implements _Frame {
       required this.player2Id,
       this.player1Points = 0,
       this.player2Points = 0,
+      this.player1Break = 0,
+      this.player2Break = 0,
+      this.player1MaxBreak = 0,
+      this.player2MaxBreak = 0,
       this.isFinished = false});
 
   factory _$_Frame.fromJson(Map<String, dynamic> json) =>
@@ -167,11 +227,23 @@ class _$_Frame implements _Frame {
   int player2Points;
   @override
   @JsonKey()
+  int player1Break;
+  @override
+  @JsonKey()
+  int player2Break;
+  @override
+  @JsonKey()
+  int player1MaxBreak;
+  @override
+  @JsonKey()
+  int player2MaxBreak;
+  @override
+  @JsonKey()
   bool isFinished;
 
   @override
   String toString() {
-    return 'Frame(player1Id: $player1Id, player2Id: $player2Id, player1Points: $player1Points, player2Points: $player2Points, isFinished: $isFinished)';
+    return 'Frame(player1Id: $player1Id, player2Id: $player2Id, player1Points: $player1Points, player2Points: $player2Points, player1Break: $player1Break, player2Break: $player2Break, player1MaxBreak: $player1MaxBreak, player2MaxBreak: $player2MaxBreak, isFinished: $isFinished)';
   }
 
   @JsonKey(ignore: true)
@@ -193,6 +265,10 @@ abstract class _Frame implements Frame {
       required final int player2Id,
       int player1Points,
       int player2Points,
+      int player1Break,
+      int player2Break,
+      int player1MaxBreak,
+      int player2MaxBreak,
       bool isFinished}) = _$_Frame;
 
   factory _Frame.fromJson(Map<String, dynamic> json) = _$_Frame.fromJson;
@@ -207,6 +283,18 @@ abstract class _Frame implements Frame {
   @override
   int get player2Points;
   set player2Points(int value);
+  @override
+  int get player1Break;
+  set player1Break(int value);
+  @override
+  int get player2Break;
+  set player2Break(int value);
+  @override
+  int get player1MaxBreak;
+  set player1MaxBreak(int value);
+  @override
+  int get player2MaxBreak;
+  set player2MaxBreak(int value);
   @override
   bool get isFinished;
   set isFinished(bool value);

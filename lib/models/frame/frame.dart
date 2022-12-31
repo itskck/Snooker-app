@@ -10,6 +10,10 @@ class Frame with _$Frame {
     required final int player2Id,
     @Default(0) int player1Points,
     @Default(0) int player2Points,
+    @Default(0) int player1Break,
+    @Default(0) int player2Break,
+    @Default(0) int player1MaxBreak,
+    @Default(0) int player2MaxBreak,
     @Default(false) bool isFinished,
   }) = _Frame;
 

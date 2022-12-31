@@ -1,6 +1,5 @@
 import 'dart:developer';
 
-import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
@@ -29,7 +28,6 @@ class LanguageCubit extends HydratedCubit<LanguageState> {
   @override
   LanguageState? fromJson(Map<String, dynamic> json) {
     if (json.containsKey('locale')) {
-      print('locale from json: ' + json['locale'].toString());
       return LanguageSet(Locale(json['locale'] as String));
     } else {
       return LanguageSet(englishLocale);

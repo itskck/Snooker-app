@@ -20,10 +20,11 @@ dependencies:
     sdk: flutter
   flutter_bloc: ^8.0.1
   flutter_pdfview: ^1.2.5
+  fluttertoast: ^8.1.2
   freezed: ^2.1.0+1
   hive: ^2.2.3
   hive_flutter: ^1.1.0
-  hydrated_bloc: ^8.1.0
+  hydrated_bloc: ^9.0.0
   image_picker: ^0.8.5+3
   json_annotation: ^4.6.0
   json_serializable: ^6.3.1

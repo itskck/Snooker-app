@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:lottie/lottie.dart';
 import 'package:snookerpad/bloc/rules/rules_cubit.dart';
 import 'package:snookerpad/utils/constants.dart';
 

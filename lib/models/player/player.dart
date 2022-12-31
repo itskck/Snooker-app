@@ -18,8 +18,17 @@ class Player with _$Player {
 
   Player._();
 
-  String get ratio =>
-      frameslost != 0 ? '${(frameswon / frameslost * 100).round()}%' : '0';
+  String get ratio {
+    if (frameslost == 0) {
+      if (frameswon == 0) {
+        return '0%';
+      } else {
+        return '100%';
+      }
+    } else {
+      return '${(frameswon / (frameslost + frameswon) * 100).round()}%';
+    }
+  }
 
   factory Player.fromJson(Map<String, Object?> json) => _$PlayerFromJson(json);
 }

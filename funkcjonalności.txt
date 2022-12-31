@@ -14,8 +14,8 @@
     2.4 Prowadzenie statystyk dot. nowego meczu (wbite bile, faule)
     2.5 Zakończenie meczu, zapisanie danych do statystyk
 3. Ekran zasad
-    3.1 Wyświetlenie zasad gry
-    3.2 Możliwość zmiany języka zasad (angielski/polski)
+  ✅  3.1 Wyświetlenie zasad gry
+  ✅  3.2 Możliwość zmiany języka zasad (angielski/polski)
 4. Ekran ustawień 
   ✅  4.1 Możliwość włączenia Night Mode
   ✅  4.2 Możliwość zmiany języka aplikacji (angielski/polski)

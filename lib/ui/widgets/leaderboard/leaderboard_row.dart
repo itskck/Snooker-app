@@ -18,6 +18,8 @@ class LeaderboardRow extends StatefulWidget {
 
 class _LeaderboardRowState extends State<LeaderboardRow> {
   Widget build(BuildContext context) {
+    print(widget.player.name);
+    print(widget.player.picture);
     return Row(
       children: [
         Expanded(
@@ -28,7 +30,8 @@ class _LeaderboardRowState extends State<LeaderboardRow> {
               Padding(
                 padding: const EdgeInsets.fromLTRB(0, 8, 8, 8),
                 child: PlayerAvatar(
-                  player: widget.player,
+                  picture: widget.player.picture,
+                  altText: Text(widget.player.name[0].toUpperCase()),
                   radius: 22,
                 ),
               ),
@@ -53,7 +56,8 @@ class _LeaderboardRowState extends State<LeaderboardRow> {
         Expanded(
           flex: 2,
           child: Text(
-              (widget.player.frameswon / widget.player.frameslost).toString()),
+            widget.player.ratio,
+          ),
         ),
         Expanded(
           flex: 2,
@@ -66,7 +70,7 @@ class _LeaderboardRowState extends State<LeaderboardRow> {
               showDialogWindow(
                 context,
                 PlayerPage(
-                  player: widget.player,
+                  playerId: widget.player.id,
                 ),
               );
             },

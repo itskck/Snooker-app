@@ -53,7 +53,8 @@ class _PlayerInfoBarState extends State<PlayerInfoBar> {
                 child: Padding(
                   padding: const EdgeInsets.all(4),
                   child: PlayerAvatar(
-                    player: widget.player,
+                    picture: widget.player.picture,
+                    altText: Text(widget.player.name[0].toUpperCase()),
                     radius: 40,
                   ),
                 ),

@@ -1,123 +1,131 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:routemaster/routemaster.dart';
+import 'package:snookerpad/bloc/frame/frame_cubit.dart';
 import 'package:snookerpad/bloc/players/players_cubit.dart';
+import 'package:snookerpad/ui/screens/frames/frame_page.dart';
 import 'package:snookerpad/ui/screens/screen_scaffold.dart';
-import 'package:snookerpad/ui/widgets/common/primary_button.dart';
-import 'package:wheel_chooser/wheel_chooser.dart';
+import 'package:snookerpad/ui/widgets/frames/player_chooser.dart';
+import 'package:snookerpad/utils/utils.dart';
 
-class NewFrame extends StatelessWidget {
-  const NewFrame({super.key});
+class NewFrame extends StatefulWidget {
+  NewFrame({super.key});
   static const String route = '/new-frame';
+
+  @override
+  State<NewFrame> createState() => _NewFrameState();
+}
+
+class _NewFrameState extends State<NewFrame> {
+  String? player1Name, player2Name;
+  List<String> players = [];
+
+  @override
+  void initState() {
+    super.initState();
+    final state = BlocProvider.of<PlayersCubit>(context).state;
+    if (state is PlayersWithData) {
+      state.players.forEach((element) {
+        players.add(element.name);
+      });
+      player1Name = players[0];
+      player2Name = players[0];
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<PlayersCubit, PlayersState>(
       builder: (context, state) {
         if (state is PlayersWithData) {
-          List<String> names = [];
-          state.players.forEach((element) => names.add(element.name));
-
-          return ScreenScaffold(
-            body: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 16,
-                    vertical: 32,
+          return BlocListener<FrameCubit, FrameState>(
+            listener: (context, state) {
+              if (state is FrameOngoing) {
+                Routemaster.of(context).replace(FramePage.route);
+              }
+            },
+            child: ScreenScaffold(
+              title: tr('choose_players'),
+              body: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Spacer(
+                    flex: 1,
                   ),
-                  child: Text(
-                    tr('choose_players'),
-                    style: Theme.of(context).textTheme.headline4,
-                  ),
-                ),
-                Spacer(
-                  flex: 1,
-                ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SizedBox(
-                      height: 100,
-                      width: MediaQuery.of(context).size.width,
-                      child: WheelChooser(
-                        horizontal: true,
-                        isInfinite: true,
-                        itemSize: 100,
-                        selectTextStyle:
-                            Theme.of(context).textTheme.bodyLarge!.copyWith(
-                                  fontWeight: FontWeight.bold,
-                                ),
-                        unSelectTextStyle:
-                            Theme.of(context).textTheme.bodyLarge,
-                        startPosition: names.length ~/ 2,
-                        onValueChanged: (value) {},
-                        datas: names,
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 30),
-                      child: Icon(Icons.keyboard_arrow_up),
-                    ),
-                    Text('vs'),
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: 30),
-                      child: Icon(Icons.keyboard_arrow_down),
-                    ),
-                    SizedBox(
-                      height: 100,
-                      width: MediaQuery.of(context).size.width,
-                      child: WheelChooser(
-                        horizontal: true,
-                        itemSize: 100,
-                        selectTextStyle:
-                            Theme.of(context).textTheme.bodyLarge!.copyWith(
-                                  fontWeight: FontWeight.bold,
-                                ),
-                        unSelectTextStyle:
-                            Theme.of(context).textTheme.bodyLarge,
-                        isInfinite: true,
-                        startPosition: names.length ~/ 2,
-                        onValueChanged: (value) {},
-                        datas: names,
-                      ),
-                    ),
-                  ],
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 30),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      ElevatedButton(
-                        onPressed: () {},
-                        child: Text(tr('play')),
-                        style: ElevatedButton.styleFrom(
-                          fixedSize: Size(
-                            MediaQuery.of(context).size.width * 0.33,
-                            40,
-                          ),
-                        ),
+                      PlayerChooser(
+                        names: players,
+                        onChanged: (value) => setState(() {
+                          player1Name = value;
+                        }),
                       ),
-                      ElevatedButton(
-                        onPressed: () {},
-                        child: Text(tr('cancel')),
-                        style: ElevatedButton.styleFrom(
-                          fixedSize: Size(
-                            MediaQuery.of(context).size.width * 0.33,
-                            40,
-                          ),
-                        ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 32),
+                        child: Text('vs'),
                       ),
+                      PlayerChooser(
+                        names: players,
+                        onChanged: (value) => setState(() {
+                          player2Name = value;
+                        }),
+                      )
                     ],
                   ),
-                ),
-                Spacer(
-                  flex: 2,
-                ),
-              ],
+                  Padding(
+                    padding: const EdgeInsets.only(top: 30),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        ElevatedButton(
+                          onPressed: () async {
+                            if (player1Name != null && player2Name != null) {
+                              if (player1Name != player2Name) {
+                                await BlocProvider.of<FrameCubit>(context)
+                                    .startFrame(
+                                  player1Id:
+                                      getPlayerByName(player1Name!, context),
+                                  player2Id:
+                                      getPlayerByName(player2Name!, context),
+                                );
+                                Routemaster.of(context)
+                                    .replace(FramePage.route);
+                              } else {
+                                showToast(tr('cannot_start_with_same_players'));
+                              }
+                            }
+                          },
+                          child: Text(tr('play')),
+                          style: ElevatedButton.styleFrom(
+                            fixedSize: Size(
+                              MediaQuery.of(context).size.width * 0.4,
+                              40,
+                            ),
+                          ),
+                        ),
+                        ElevatedButton(
+                          onPressed: () {
+                            Routemaster.of(context).pop();
+                          },
+                          child: Text(tr('cancel')),
+                          style: ElevatedButton.styleFrom(
+                            fixedSize: Size(
+                              MediaQuery.of(context).size.width * 0.4,
+                              40,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Spacer(
+                    flex: 2,
+                  ),
+                ],
+              ),
             ),
           );
         } else {

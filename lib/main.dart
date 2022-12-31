@@ -10,12 +10,9 @@ void main() async {
   await EasyLocalization.ensureInitialized();
 
   final tmpDir = await getApplicationDocumentsDirectory();
-  final storage = await HydratedStorage.build(storageDirectory: tmpDir);
+  HydratedBloc.storage = await HydratedStorage.build(storageDirectory: tmpDir);
 
-  HydratedBlocOverrides.runZoned(
-    () => runApp(
-      const GlobalProviders(),
-    ),
-    storage: storage,
+  runApp(
+    const GlobalProviders(),
   );
 }

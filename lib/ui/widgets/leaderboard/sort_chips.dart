@@ -15,6 +15,8 @@ class _SortChipsState extends State<SortChips> {
   int? value = 0;
   @override
   Widget build(BuildContext context) {
+    BlocProvider.of<PlayersCubit>(context)
+        .changeSortType(sortType: sortTypes.values[value!]);
     return Align(
       alignment: Alignment.centerLeft,
       child: Padding(
@@ -29,10 +31,8 @@ class _SortChipsState extends State<SortChips> {
               ),
               selected: value == index,
               onSelected: (selected) {
-                BlocProvider.of<PlayersCubit>(context)
-                    .changeSortType(sortType: sortTypes.values[index]);
                 setState(() {
-                  value = selected ? index : null;
+                  value = selected ? index : value;
                 });
               },
             ),
