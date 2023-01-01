@@ -18,8 +18,6 @@ class LeaderboardRow extends StatefulWidget {
 
 class _LeaderboardRowState extends State<LeaderboardRow> {
   Widget build(BuildContext context) {
-    print(widget.player.name);
-    print(widget.player.picture);
     return Row(
       children: [
         Expanded(

@@ -1,7 +1,6 @@
 import 'package:advance_pdf_viewer/advance_pdf_viewer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:snookerpad/bloc/language/language_cubit.dart';
 import 'package:snookerpad/bloc/rules/rules_cubit.dart';
 import 'package:snookerpad/ui/widgets/common/loader.dart';
 import 'package:snookerpad/ui/widgets/rules/rules_language_picker.dart';

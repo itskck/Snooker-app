@@ -2,7 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:snookerpad/bloc/frame/frame_cubit.dart';
 
-enum BallButtonType { red, yellow, green, brown, blue, pink, black }
+enum BallButtonType {
+  red,
+  yellow,
+  green,
+  brown,
+  blue,
+  pink,
+  black,
+}
 
 class BallButton extends StatelessWidget {
   const BallButton({

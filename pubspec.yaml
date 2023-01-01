@@ -40,6 +40,8 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   very_good_analysis: ^3.0.1
+  flutter_launcher_icons: ^0.11.0
+  flutter_native_splash: ^2.2.16
 
 flutter:
   uses-material-design: true
@@ -47,3 +49,16 @@ flutter:
     - assets/translations/
     - assets/images/
     - assets/rules/
+
+flutter_icons:
+  android: "launcher_icon"
+  ios: false
+  image_path: "assets/images/red.png"
+
+flutter_native_splash:
+  color: "#283b31"
+  image: assets/images/logo2.png
+  fullscreen: true
+  android_12:
+    color: "#283b31"
+    icon_background_color: "#283b31"

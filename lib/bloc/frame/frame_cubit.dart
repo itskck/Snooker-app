@@ -92,10 +92,28 @@ class FrameCubit extends HydratedCubit<FrameState> {
     }
   }
 
-  Future<void> addPoints(
-      {required int points,
-      required int playerId,
-      bool countBreak = true}) async {
+  Future<void> resetBreak(int playerId) async {
+    try {
+      if (state is FrameOngoing) {
+        var frameToEmit = currentFrame!.copyWith(
+          player1Break: 0,
+          player2Break: 0,
+        );
+        emit(FrameOngoing(frameToEmit));
+      }
+    } catch (error, s) {
+      log(
+        error.toString(),
+        stackTrace: s,
+      );
+    }
+  }
+
+  Future<void> addPoints({
+    required int points,
+    required int playerId,
+    bool countBreak = true,
+  }) async {
     try {
       if (state is FrameOngoing) {
         var frameToEmit = currentFrame!.copyWith(
@@ -124,13 +142,13 @@ class FrameCubit extends HydratedCubit<FrameState> {
 
         frameToEmit = frameToEmit.copyWith(
           player1MaxBreak:
-              currentFrame!.player1Break > currentFrame!.player1MaxBreak
-                  ? currentFrame!.player1Break
-                  : currentFrame!.player1MaxBreak,
+              frameToEmit.player1Break > frameToEmit.player1MaxBreak
+                  ? frameToEmit.player1Break
+                  : frameToEmit.player1MaxBreak,
           player2MaxBreak:
-              currentFrame!.player2Break > currentFrame!.player2MaxBreak
-                  ? currentFrame!.player2Break
-                  : currentFrame!.player2MaxBreak,
+              frameToEmit.player2Break > frameToEmit.player2MaxBreak
+                  ? frameToEmit.player2Break
+                  : frameToEmit.player2MaxBreak,
         );
 
         emit(FrameOngoing(frameToEmit));

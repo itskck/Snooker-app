@@ -97,7 +97,11 @@ class PlayerPanel extends StatelessWidget {
               alignment: WrapAlignment.center,
               children: BallButtonType.values
                   .map(
-                      (e) => BallButton(ballButtonType: e, playerId: player.id))
+                    (e) => BallButton(
+                      ballButtonType: e,
+                      playerId: player.id,
+                    ),
+                  )
                   .toList(),
             ),
           ),

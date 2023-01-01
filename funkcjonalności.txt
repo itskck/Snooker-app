@@ -8,11 +8,11 @@
   ✅  1.7 Usuwanie gracza
   ✅  1.8 Sortowanie graczy po typach statystyk
 2. Ekran gry
-    2.1 Automatyczne powiadomienie trwający wczesniej mecz został niedokończony
-    2.2 Możliwość wczytania meczu
-    2.3 Możliwość zaczęcia nowego meczu
-    2.4 Prowadzenie statystyk dot. nowego meczu (wbite bile, faule)
-    2.5 Zakończenie meczu, zapisanie danych do statystyk
+  ✅  2.1 Automatyczne powiadomienie trwający wczesniej mecz został niedokończony
+  ✅ 2.2 Możliwość wczytania meczu
+  ✅  2.3 Możliwość zaczęcia nowego meczu
+  ✅  2.4 Prowadzenie statystyk dot. nowego meczu (wbite bile, faule)
+  ✅  2.5 Zakończenie meczu, zapisanie danych do statystyk
 3. Ekran zasad
   ✅  3.1 Wyświetlenie zasad gry
   ✅  3.2 Możliwość zmiany języka zasad (angielski/polski)

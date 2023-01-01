@@ -1,6 +1,5 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:snookerpad/models/player/player.dart';
 
 class PlayerAvatar extends StatefulWidget {
   const PlayerAvatar({
