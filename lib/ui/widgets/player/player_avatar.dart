@@ -1,32 +1,31 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:snookerpad/models/player/player.dart';
 
-class PlayerAvatar extends StatelessWidget {
+class PlayerAvatar extends StatefulWidget {
   const PlayerAvatar({
     super.key,
-    required this.player,
     this.radius,
+    this.picture,
+    required this.altText,
   });
 
   final double? radius;
+  final Uint8List? picture;
+  final Widget altText;
 
-  final Player player;
+  @override
+  State<PlayerAvatar> createState() => _PlayerAvatarState();
+}
 
+class _PlayerAvatarState extends State<PlayerAvatar> {
   @override
   Widget build(BuildContext context) {
     return CircleAvatar(
-      maxRadius: radius,
-      backgroundColor: Theme.of(context).primaryColor,
-      child: player.picture == null
-          ? Text(
-              player.name[0].toUpperCase(),
-              style: Theme.of(context).textTheme.headline5,
-              textAlign: TextAlign.center,
-            )
-          : Image.memory(
-              player.picture!,
-              fit: BoxFit.contain,
-            ),
+      maxRadius: widget.radius,
+      backgroundColor: Theme.of(context).colorScheme.surface,
+      foregroundImage:
+          widget.picture != null ? Image.memory(widget.picture!).image : null,
+      child: widget.altText,
     );
   }
 }

@@ -29,7 +29,7 @@ class PlayerStats extends StatelessWidget {
           children: [
             PlayerStat(
               title: tr('stat_win_ratio'),
-              content: '${player.frameswon * 100 / player.frameslost} %',
+              content: player.ratio,
             ),
             PlayerStat(
               title: tr('stat_max_break'),

@@ -1,5 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:snookerpad/bloc/language/language_cubit.dart';
 import 'package:snookerpad/ui/screens/home/leaderboard.dart';
 import 'package:snookerpad/ui/screens/home/rules.dart';
 import 'package:snookerpad/ui/screens/home/scoreboard.dart';
@@ -16,12 +18,6 @@ class HomeSkeleton extends StatefulWidget {
 
 class _HomeSkeletonState extends State<HomeSkeleton> {
   late int index;
-  final List<Widget> screens = const [
-    Scoreboard(),
-    Rules(),
-    Leaderboard(),
-    Settings(),
-  ];
 
   @override
   void initState() {
@@ -31,6 +27,16 @@ class _HomeSkeletonState extends State<HomeSkeleton> {
 
   @override
   Widget build(BuildContext context) {
+    final List<Widget> screens = [
+      Scoreboard(),
+      Rules(),
+      Leaderboard(),
+      Settings(
+        onChanged: (locale) => BlocProvider.of<LanguageCubit>(context)
+            .changeLocale(locale, context),
+      ),
+    ];
+
     return Scaffold(
       body: SafeArea(
         child: screens[index],

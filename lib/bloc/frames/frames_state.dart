@@ -7,22 +7,10 @@ abstract class FramesState extends Equatable {
   List<Object> get props => [];
 }
 
-class FramesInitial extends FramesState {}
-
-class FramesWithOngoing extends FramesState {
-  const FramesWithOngoing(this.previousFrames, this.ongoingFrame);
-  final List<Frame> previousFrames;
-  final Frame ongoingFrame;
+class FramesData extends FramesState {
+  const FramesData(this.frames);
+  final List<Frame> frames;
 
   @override
-  List<Object> get props => [previousFrames, ongoingFrame];
-}
-
-class FramesEverythingFinished extends FramesState {
-  const FramesEverythingFinished(this.previousFrames);
-
-  final List<Frame> previousFrames;
-
-  @override
-  List<Object> get props => [previousFrames];
+  List<Object> get props => [frames];
 }

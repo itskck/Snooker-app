@@ -5,9 +5,11 @@ class ScreenScaffold extends StatelessWidget {
   const ScreenScaffold({
     super.key,
     required this.body,
+    this.title,
   });
 
   final Widget body;
+  final String? title;
 
   @override
   Widget build(BuildContext context) {
@@ -20,6 +22,12 @@ class ScreenScaffold extends StatelessWidget {
           ),
           onPressed: () => Routemaster.of(context).pop(),
         ),
+        title: title != null
+            ? Text(
+                title!,
+                style: Theme.of(context).textTheme.headlineMedium,
+              )
+            : null,
       ),
       body: SafeArea(child: body),
     );

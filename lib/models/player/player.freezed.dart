@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'player.dart';
 
@@ -12,7 +12,7 @@ part of 'player.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 Player _$PlayerFromJson(Map<String, dynamic> json) {
   return _Player.fromJson(json);
@@ -36,7 +36,8 @@ mixin _$Player {
 /// @nodoc
 abstract class $PlayerCopyWith<$Res> {
   factory $PlayerCopyWith(Player value, $Res Function(Player) then) =
-      _$PlayerCopyWithImpl<$Res>;
+      _$PlayerCopyWithImpl<$Res, Player>;
+  @useResult
   $Res call(
       {int id,
       String name,
@@ -47,56 +48,61 @@ abstract class $PlayerCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$PlayerCopyWithImpl<$Res> implements $PlayerCopyWith<$Res> {
+class _$PlayerCopyWithImpl<$Res, $Val extends Player>
+    implements $PlayerCopyWith<$Res> {
   _$PlayerCopyWithImpl(this._value, this._then);
 
-  final Player _value;
   // ignore: unused_field
-  final $Res Function(Player) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? name = freezed,
-    Object? maxbreak = freezed,
-    Object? frameswon = freezed,
-    Object? frameslost = freezed,
+    Object? id = null,
+    Object? name = null,
+    Object? maxbreak = null,
+    Object? frameswon = null,
+    Object? frameslost = null,
     Object? picture = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      name: name == freezed
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      maxbreak: maxbreak == freezed
+      maxbreak: null == maxbreak
           ? _value.maxbreak
           : maxbreak // ignore: cast_nullable_to_non_nullable
               as int,
-      frameswon: frameswon == freezed
+      frameswon: null == frameswon
           ? _value.frameswon
           : frameswon // ignore: cast_nullable_to_non_nullable
               as int,
-      frameslost: frameslost == freezed
+      frameslost: null == frameslost
           ? _value.frameslost
           : frameslost // ignore: cast_nullable_to_non_nullable
               as int,
-      picture: picture == freezed
+      picture: freezed == picture
           ? _value.picture
           : picture // ignore: cast_nullable_to_non_nullable
               as Uint8List?,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$_PlayerCopyWith<$Res> implements $PlayerCopyWith<$Res> {
-  factory _$$_PlayerCopyWith(_$_Player value, $Res Function(_$_Player) then) =
-      __$$_PlayerCopyWithImpl<$Res>;
+abstract class _$$PlayerImplCopyWith<$Res> implements $PlayerCopyWith<$Res> {
+  factory _$$PlayerImplCopyWith(
+          _$PlayerImpl value, $Res Function(_$PlayerImpl) then) =
+      __$$PlayerImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {int id,
       String name,
@@ -107,45 +113,45 @@ abstract class _$$_PlayerCopyWith<$Res> implements $PlayerCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_PlayerCopyWithImpl<$Res> extends _$PlayerCopyWithImpl<$Res>
-    implements _$$_PlayerCopyWith<$Res> {
-  __$$_PlayerCopyWithImpl(_$_Player _value, $Res Function(_$_Player) _then)
-      : super(_value, (v) => _then(v as _$_Player));
+class __$$PlayerImplCopyWithImpl<$Res>
+    extends _$PlayerCopyWithImpl<$Res, _$PlayerImpl>
+    implements _$$PlayerImplCopyWith<$Res> {
+  __$$PlayerImplCopyWithImpl(
+      _$PlayerImpl _value, $Res Function(_$PlayerImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$_Player get _value => super._value as _$_Player;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? name = freezed,
-    Object? maxbreak = freezed,
-    Object? frameswon = freezed,
-    Object? frameslost = freezed,
+    Object? id = null,
+    Object? name = null,
+    Object? maxbreak = null,
+    Object? frameswon = null,
+    Object? frameslost = null,
     Object? picture = freezed,
   }) {
-    return _then(_$_Player(
-      id: id == freezed
+    return _then(_$PlayerImpl(
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      name: name == freezed
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      maxbreak: maxbreak == freezed
+      maxbreak: null == maxbreak
           ? _value.maxbreak
           : maxbreak // ignore: cast_nullable_to_non_nullable
               as int,
-      frameswon: frameswon == freezed
+      frameswon: null == frameswon
           ? _value.frameswon
           : frameswon // ignore: cast_nullable_to_non_nullable
               as int,
-      frameslost: frameslost == freezed
+      frameslost: null == frameslost
           ? _value.frameslost
           : frameslost // ignore: cast_nullable_to_non_nullable
               as int,
-      picture: picture == freezed
+      picture: freezed == picture
           ? _value.picture
           : picture // ignore: cast_nullable_to_non_nullable
               as Uint8List?,
@@ -155,17 +161,18 @@ class __$$_PlayerCopyWithImpl<$Res> extends _$PlayerCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Player with DiagnosticableTreeMixin implements _Player {
-  const _$_Player(
+class _$PlayerImpl extends _Player with DiagnosticableTreeMixin {
+  _$PlayerImpl(
       {required this.id,
       required this.name,
       required this.maxbreak,
       required this.frameswon,
       required this.frameslost,
-      @Uint8ListConverter() this.picture});
+      @Uint8ListConverter() this.picture})
+      : super._();
 
-  factory _$_Player.fromJson(Map<String, dynamic> json) =>
-      _$$_PlayerFromJson(json);
+  factory _$PlayerImpl.fromJson(Map<String, dynamic> json) =>
+      _$$PlayerImplFromJson(json);
 
   @override
   final int id;
@@ -200,53 +207,51 @@ class _$_Player with DiagnosticableTreeMixin implements _Player {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Player &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.name, name) &&
-            const DeepCollectionEquality().equals(other.maxbreak, maxbreak) &&
-            const DeepCollectionEquality().equals(other.frameswon, frameswon) &&
-            const DeepCollectionEquality()
-                .equals(other.frameslost, frameslost) &&
+            other is _$PlayerImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.maxbreak, maxbreak) ||
+                other.maxbreak == maxbreak) &&
+            (identical(other.frameswon, frameswon) ||
+                other.frameswon == frameswon) &&
+            (identical(other.frameslost, frameslost) ||
+                other.frameslost == frameslost) &&
             const DeepCollectionEquality().equals(other.picture, picture));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(name),
-      const DeepCollectionEquality().hash(maxbreak),
-      const DeepCollectionEquality().hash(frameswon),
-      const DeepCollectionEquality().hash(frameslost),
-      const DeepCollectionEquality().hash(picture));
+  int get hashCode => Object.hash(runtimeType, id, name, maxbreak, frameswon,
+      frameslost, const DeepCollectionEquality().hash(picture));
 
   @JsonKey(ignore: true)
   @override
-  _$$_PlayerCopyWith<_$_Player> get copyWith =>
-      __$$_PlayerCopyWithImpl<_$_Player>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$PlayerImplCopyWith<_$PlayerImpl> get copyWith =>
+      __$$PlayerImplCopyWithImpl<_$PlayerImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PlayerToJson(
+    return _$$PlayerImplToJson(
       this,
     );
   }
 }
 
-abstract class _Player implements Player {
-  const factory _Player(
+abstract class _Player extends Player {
+  factory _Player(
       {required final int id,
       required final String name,
       required final int maxbreak,
       required final int frameswon,
       required final int frameslost,
-      @Uint8ListConverter() final Uint8List? picture}) = _$_Player;
+      @Uint8ListConverter() final Uint8List? picture}) = _$PlayerImpl;
+  _Player._() : super._();
 
-  factory _Player.fromJson(Map<String, dynamic> json) = _$_Player.fromJson;
+  factory _Player.fromJson(Map<String, dynamic> json) = _$PlayerImpl.fromJson;
 
   @override
   int get id;
@@ -263,6 +268,6 @@ abstract class _Player implements Player {
   Uint8List? get picture;
   @override
   @JsonKey(ignore: true)
-  _$$_PlayerCopyWith<_$_Player> get copyWith =>
+  _$$PlayerImplCopyWith<_$PlayerImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

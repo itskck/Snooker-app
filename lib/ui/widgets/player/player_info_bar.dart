@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:snookerpad/bloc/players/players_cubit.dart';
 import 'package:snookerpad/models/player/player.dart';
 import 'package:snookerpad/ui/widgets/player/player_avatar.dart';
@@ -20,8 +19,6 @@ class PlayerInfoBar extends StatefulWidget {
 class _PlayerInfoBarState extends State<PlayerInfoBar> {
   @override
   Widget build(BuildContext context) {
-    final ImagePicker picker = ImagePicker();
-
     return Stack(
       alignment: AlignmentDirectional.center,
       children: [
@@ -56,22 +53,20 @@ class _PlayerInfoBarState extends State<PlayerInfoBar> {
                 child: Padding(
                   padding: const EdgeInsets.all(4),
                   child: PlayerAvatar(
-                    player: widget.player,
+                    picture: widget.player.picture,
+                    altText: Text(widget.player.name[0].toUpperCase()),
                     radius: 40,
                   ),
                 ),
               ),
               IconButton(
-                  onPressed: () async {
-                    final XFile? newImage =
-                        await picker.pickImage(source: ImageSource.camera);
-                    if (newImage == null) return;
-
-                    final bytes = await newImage.readAsBytes();
-                    BlocProvider.of<PlayersCubit>(context)
-                        .editPlayer(widget.player, image: bytes);
-                  },
-                  icon: Icon(Icons.edit))
+                onPressed: () async {
+                  Navigator.of(context).pop();
+                  await BlocProvider.of<PlayersCubit>(context)
+                      .updateImage(widget.player);
+                },
+                icon: Icon(Icons.edit),
+              )
             ],
           ),
         )
