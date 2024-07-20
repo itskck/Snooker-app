@@ -50,7 +50,7 @@ class _PlayerCreateState extends State<PlayerCreate> {
                         padding: const EdgeInsets.only(bottom: 16),
                         child: Text(
                           tr('add_player_title'),
-                          style: Theme.of(context).textTheme.headline5,
+                          style: Theme.of(context).textTheme.headlineSmall,
                         ),
                       ),
                       InkWell(

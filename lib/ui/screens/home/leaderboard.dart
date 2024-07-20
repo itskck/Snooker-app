@@ -32,7 +32,7 @@ class _LeaderboardState extends State<Leaderboard> {
                 ),
                 child: Text(
                   tr('leaderboard'),
-                  style: Theme.of(context).textTheme.headline4,
+                  style: Theme.of(context).textTheme.headlineMedium,
                 ),
               ),
               const SortChips(),

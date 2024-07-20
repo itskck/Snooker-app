@@ -6,17 +6,18 @@ part of 'player.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Player _$$_PlayerFromJson(Map<String, dynamic> json) => _$_Player(
-      id: json['id'] as int,
+_$PlayerImpl _$$PlayerImplFromJson(Map<String, dynamic> json) => _$PlayerImpl(
+      id: (json['id'] as num).toInt(),
       name: json['name'] as String,
-      maxbreak: json['maxbreak'] as int,
-      frameswon: json['frameswon'] as int,
-      frameslost: json['frameslost'] as int,
+      maxbreak: (json['maxbreak'] as num).toInt(),
+      frameswon: (json['frameswon'] as num).toInt(),
+      frameslost: (json['frameslost'] as num).toInt(),
       picture:
           const Uint8ListConverter().fromJson(json['picture'] as List<int>?),
     );
 
-Map<String, dynamic> _$$_PlayerToJson(_$_Player instance) => <String, dynamic>{
+Map<String, dynamic> _$$PlayerImplToJson(_$PlayerImpl instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'maxbreak': instance.maxbreak,

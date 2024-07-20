@@ -22,7 +22,7 @@ class _PlayerAvatarState extends State<PlayerAvatar> {
   Widget build(BuildContext context) {
     return CircleAvatar(
       maxRadius: widget.radius,
-      backgroundColor: Theme.of(context).backgroundColor,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       foregroundImage:
           widget.picture != null ? Image.memory(widget.picture!).image : null,
       child: widget.altText,

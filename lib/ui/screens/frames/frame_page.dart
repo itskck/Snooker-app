@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:routemaster/routemaster.dart';
 import 'package:snookerpad/bloc/frame/frame_cubit.dart';
 import 'package:snookerpad/models/frame/frame.dart';
@@ -10,10 +11,32 @@ import 'package:snookerpad/ui/screens/screen_with_appbar.dart';
 import 'package:snookerpad/ui/widgets/frames/player_panel.dart';
 import 'package:snookerpad/utils/utils.dart';
 
-class FramePage extends StatelessWidget {
+class FramePage extends StatefulWidget {
   const FramePage({super.key});
 
   static const String route = '/frame';
+
+  @override
+  State<FramePage> createState() => _FramePageState();
+}
+
+class _FramePageState extends State<FramePage> {
+  late BannerAd bannerAd;
+  bool isAdLoaded = false;
+
+  @override
+  void initState() {
+    super.initState();
+    bannerAd = BannerAd(
+      size: AdSize.banner,
+      adUnitId: 'ca-app-pub-3714556164098128/8756152915',
+      listener: BannerAdListener(
+          onAdLoaded: (ad) => setState(() => isAdLoaded = true),
+          onAdFailedToLoad: (ad, error) {}),
+      request: AdRequest(),
+    );
+    bannerAd.load();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -25,6 +48,13 @@ class FramePage extends StatelessWidget {
           final Frame frame = state.frame;
 
           return ScreenWithAppbar(
+            fab: isAdLoaded
+                ? SizedBox(
+                    height: bannerAd.size.height.toDouble(),
+                    width: bannerAd.size.width.toDouble(),
+                    child: AdWidget(ad: bannerAd),
+                  )
+                : null,
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 32),
               child: Column(
@@ -77,6 +107,9 @@ class FramePage extends StatelessWidget {
                         ),
                       )
                     ],
+                  ),
+                  SizedBox(
+                    height: isAdLoaded ? bannerAd.size.height.toDouble() : 50,
                   )
                 ],
               ),

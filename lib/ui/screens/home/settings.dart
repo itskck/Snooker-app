@@ -24,7 +24,7 @@ class Settings extends StatelessWidget {
           ),
           child: Text(
             tr('settings'),
-            style: Theme.of(context).textTheme.headline4,
+            style: Theme.of(context).textTheme.headlineMedium,
           ),
         ),
         BlocBuilder<ThemeCubit, ThemeState>(

@@ -25,7 +25,7 @@ class ScreenScaffold extends StatelessWidget {
         title: title != null
             ? Text(
                 title!,
-                style: Theme.of(context).textTheme.headline5,
+                style: Theme.of(context).textTheme.headlineMedium,
               )
             : null,
       ),

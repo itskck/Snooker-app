@@ -22,6 +22,7 @@ dependencies:
   flutter_pdfview: ^1.2.5
   fluttertoast: ^8.1.2
   freezed: ^2.1.0+1
+  google_mobile_ads: ^2.3.0
   hive: ^2.2.3
   hive_flutter: ^1.1.0
   hydrated_bloc: ^9.0.0
